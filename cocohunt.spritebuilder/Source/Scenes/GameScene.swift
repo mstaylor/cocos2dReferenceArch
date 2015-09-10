@@ -55,6 +55,8 @@ class GameScene : CCScene {
         case Z_BATCH_NODE
         case Z_LABELS
         case Z_HUD
+        case Z_PAUSE_BUTTON
+        case Z_DIALOGS
     }
     
     

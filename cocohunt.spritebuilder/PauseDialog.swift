@@ -9,6 +9,10 @@
 import Foundation
 
 class PauseDialog : CCNode {
+    
+    var onCloseBlock:(()->Void)? = nil
+    
+    
     override init() {
         super.init();
         setupModalDialog()
@@ -46,8 +50,31 @@ class PauseDialog : CCNode {
         btnRestart.setTarget(self, selector: "btnRestartTapped")
         bg.addChild(btnRestart)
         
+        let exitNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_exit.png") as! CCSpriteFrame
+        let exitHighLightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_exit_pressed.png") as! CCSpriteFrame
+        let btnExit:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: exitNormalImage, highlightedSpriteFrame: exitHighLightedImage, disabledSpriteFrame: nil) as! CCButton
         
-        
-        
+        btnExit.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
+        btnExit.position = ccp(0.75, 0.2)
+        btnExit.setTarget(self, selector: "btnExitTapped")
+        bg.addChild(btnExit)
+    }
+    
+    
+    func btnCloseTapped() {
+        self.onCloseBlock?()
+        self.removeFromParentAndCleanup(true)
+    }
+    
+    func btnRestartTapped() {
+        NSLog("Restart")
+    }
+    
+    func btnExitTapped() {
+        NSLog("Exit")
+    }
+    
+    override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
+        NSLog("Touch swallowed by the pause dialog")
     }
 }
