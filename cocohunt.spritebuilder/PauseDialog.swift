@@ -42,7 +42,7 @@ class PauseDialog : CCNode {
         bg.addChild(btnClose)
         
         //Restart button
-        let restartNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_restart_png") as! CCSpriteFrame
+        let restartNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_restart.png") as! CCSpriteFrame
         let restartHighLightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_restart_pressed.png") as! CCSpriteFrame
         let btnRestart:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: restartNormalImage, highlightedSpriteFrame: restartHighLightedImage, disabledSpriteFrame: nil) as! CCButton
         btnRestart.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)

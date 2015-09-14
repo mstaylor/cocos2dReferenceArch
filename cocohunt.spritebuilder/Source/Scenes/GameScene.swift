@@ -80,6 +80,7 @@ class GameScene : CCScene {
         userInteractionEnabled = true;
         initializeHUD();
         initializeStats();
+        self.addPauseButton()
         
     }
     
@@ -463,6 +464,47 @@ class GameScene : CCScene {
         }
         let targetPoint:CGPoint? = self.getGyroTargetPoint();
         _hunter?.aimAtPoint(targetPoint!);
+    }
+    
+    private func addPauseButton() {
+        let pauseNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_pause.png") as! CCSpriteFrame
+        let pauseHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_pause_pressed.png") as! CCSpriteFrame
+        let btnPause:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: pauseNormalImage, highlightedSpriteFrame: pauseHighlightedImage, disabledSpriteFrame: nil) as! CCButton
+        btnPause.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
+        btnPause.position = ccp(0.95, 0.5)
+        btnPause.setTarget(self, selector: "btnPauseTapped")
+        self.addChild(btnPause, z: NodeOrder.Z_PAUSE_BUTTON.rawValue)
+        
+    }
+    
+    func btnPauseTapped() {
+        if (gameState != GameState.GameStatePlaying) {
+            return
+        }
+        gameState = GameState.GameStatePaused
+        
+        for bird in _birds! {
+           (bird as! Bird).paused = true
+        }
+        
+        for arrow in _arrows!{
+            (arrow as! CCSprite).paused = true
+        }
+        
+        let dlg:PauseDialog = PauseDialog()
+        dlg.onCloseBlock = {
+            Void in
+            self.gameState = GameState.GameStatePlaying
+            for bird in self._birds! {
+                (bird as! Bird).paused = false
+            }
+            for arrow in self._arrows! {
+                (arrow as! CCSprite).paused = false
+            }
+            
+        }
+        self.addChild(dlg, z: NodeOrder.Z_DIALOGS.rawValue)
+        
     }
     
 }
