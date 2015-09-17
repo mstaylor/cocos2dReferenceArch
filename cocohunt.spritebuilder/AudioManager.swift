@@ -80,7 +80,7 @@ class AudioManager: NSObject {
         }
     }
     
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
        super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
     }
@@ -146,7 +146,7 @@ class AudioManager: NSObject {
         
         //2
         let audioDefaults:NSDictionary = [_kSoundKey: true, _kMusicKey: true]
-        userDefaults.registerDefaults(audioDefaults as [NSObject : AnyObject])
+        userDefaults.registerDefaults(audioDefaults as! [String : AnyObject])
         
         //3
         _isSoundEnabled = userDefaults.boolForKey(_kSoundKey)

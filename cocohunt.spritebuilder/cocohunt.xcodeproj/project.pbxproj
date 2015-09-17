@@ -125,6 +125,7 @@
 		9E53D6C61BA22416005C0ADB /* win_lose_dialog_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53D6AA1BA22416005C0ADB /* win_lose_dialog_bg-hd.png */; };
 		9E53D6C71BA22416005C0ADB /* win_lose_dialog_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53D6AB1BA22416005C0ADB /* win_lose_dialog_bg.png */; };
 		9E53D6C91BA22487005C0ADB /* PauseDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E53D6C81BA22487005C0ADB /* PauseDialog.swift */; };
+		9E53D6DD1BA772E7005C0ADB /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E53D6DC1BA772E7005C0ADB /* LoadingScene.swift */; };
 		9E5C972B1B965F3B003D5F1C /* HighScoresScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C972A1B965F3B003D5F1C /* HighScoresScene.swift */; };
 		9E5C972F1B965F56003D5F1C /* LevelSelectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C972E1B965F56003D5F1C /* LevelSelectScene.swift */; };
 		9E5C97361B965FAF003D5F1C /* highscores_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E5C97321B965FAF003D5F1C /* highscores_bg-hd.png */; };
@@ -241,6 +242,7 @@
 		9E8915CB1B0D5CE500CBC46C /* track_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E8915C51B0D5CE500CBC46C /* track_3.mp3 */; };
 		9E8915CC1B0D5CE500CBC46C /* track_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E8915C61B0D5CE500CBC46C /* track_4.mp3 */; };
 		9E8915CD1B0D5CE500CBC46C /* track_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9E8915C71B0D5CE500CBC46C /* track_5.mp3 */; };
+		9E9F609A1BAB6603000DA162 /* WinLoseDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9F60991BAB6603000DA162 /* WinLoseDialog.swift */; settings = {ASSET_TAGS = (); }; };
 		9EC65C751B017E7700A089A8 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC65C741B017E7700A089A8 /* AudioManager.swift */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -421,6 +423,7 @@
 		9E53D6AA1BA22416005C0ADB /* win_lose_dialog_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "win_lose_dialog_bg-hd.png"; sourceTree = "<group>"; };
 		9E53D6AB1BA22416005C0ADB /* win_lose_dialog_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win_lose_dialog_bg.png; sourceTree = "<group>"; };
 		9E53D6C81BA22487005C0ADB /* PauseDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseDialog.swift; sourceTree = "<group>"; };
+		9E53D6DC1BA772E7005C0ADB /* LoadingScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
 		9E5C972A1B965F3B003D5F1C /* HighScoresScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresScene.swift; sourceTree = "<group>"; };
 		9E5C972E1B965F56003D5F1C /* LevelSelectScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectScene.swift; sourceTree = "<group>"; };
 		9E5C97321B965FAF003D5F1C /* highscores_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "highscores_bg-hd.png"; sourceTree = "<group>"; };
@@ -537,6 +540,7 @@
 		9E8915C51B0D5CE500CBC46C /* track_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track_3.mp3; sourceTree = "<group>"; };
 		9E8915C61B0D5CE500CBC46C /* track_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track_4.mp3; sourceTree = "<group>"; };
 		9E8915C71B0D5CE500CBC46C /* track_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = track_5.mp3; sourceTree = "<group>"; };
+		9E9F60991BAB6603000DA162 /* WinLoseDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinLoseDialog.swift; sourceTree = "<group>"; };
 		9EC65C741B017E7700A089A8 /* AudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
@@ -1057,6 +1061,8 @@
 				9E5C972A1B965F3B003D5F1C /* HighScoresScene.swift */,
 				9E5C972E1B965F56003D5F1C /* LevelSelectScene.swift */,
 				9E53D6C81BA22487005C0ADB /* PauseDialog.swift */,
+				9E53D6DC1BA772E7005C0ADB /* LoadingScene.swift */,
+				9E9F60991BAB6603000DA162 /* WinLoseDialog.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1292,6 +1298,8 @@
 		B77F1B2617B978D7009739AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Apportable;
 				TargetAttributes = {
@@ -1677,10 +1685,12 @@
 				9E4519241B952A3A00ADC323 /* AboutScene.swift in Sources */,
 				9E53D6C91BA22487005C0ADB /* PauseDialog.swift in Sources */,
 				9EC65C751B017E7700A089A8 /* AudioManager.swift in Sources */,
+				9E53D6DD1BA772E7005C0ADB /* LoadingScene.swift in Sources */,
 				9E5C972F1B965F56003D5F1C /* LevelSelectScene.swift in Sources */,
 				9E4BE32B1B90D84000120B71 /* MenuScene.swift in Sources */,
 				9E8657FC1AA6660A001F507D /* GameScene.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				9E9F609A1BAB6603000DA162 /* WinLoseDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

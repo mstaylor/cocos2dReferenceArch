@@ -197,8 +197,8 @@ class Bird : CCSprite {
         explosion.blendMode = CCBlendMode(options: ["CCBlendFuncSrcColor" : Int(blendFunc.src), "CCBlendFuncDstColor" : Int(blendFunc.dst)])
         
         //14 Finding scene and addint particle system to it
-        let batchNode:CCNode = self.parent
-        let scene:CCNode = batchNode.parent
+        let batchNode:CCNode = self.parent!
+        let scene:CCNode = batchNode.parent!
         scene.addChild(explosion)
         
         
@@ -222,7 +222,7 @@ class Bird : CCSprite {
         let yDelta1 = CGFloat(5);
         let yDelta2 = CGFloat(10);
         let yDelta4 = CGFloat(20);
-        var curve:ccBezierConfig = ccBezierConfig(endPosition: ccp(ptsLabel.position.x, ptsLabel.position.y + yDelta4), controlPoint_1: ccp(ptsLabel.position.x + xDelta1, ptsLabel.position.y + yDelta2), controlPoint_2: ccp(ptsLabel.position.x - xDelta1 , ptsLabel.position.y + yDelta1));
+        let curve:ccBezierConfig = ccBezierConfig(endPosition: ccp(ptsLabel.position.x, ptsLabel.position.y + yDelta4), controlPoint_1: ccp(ptsLabel.position.x + xDelta1, ptsLabel.position.y + yDelta2), controlPoint_2: ccp(ptsLabel.position.x - xDelta1 , ptsLabel.position.y + yDelta1));
         
         //4 total duration of label floating
         let  baseDuration = 1.0;

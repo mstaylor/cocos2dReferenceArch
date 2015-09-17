@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PauseDialog : CCNode {
+class PauseDialog : CCNode, UIAlertViewDelegate {
     
     var onCloseBlock:(()->Void)? = nil
     
@@ -68,11 +68,26 @@ class PauseDialog : CCNode {
     
     func btnRestartTapped() {
         NSLog("Restart")
+        let loadingScene:LoadingScene = LoadingScene()
+        let transition:CCTransition = CCTransition(crossFadeWithDuration: 1.0)
+        CCDirector.sharedDirector().replaceScene(loadingScene, withTransition: transition)
     }
     
     func btnExitTapped() {
         NSLog("Exit")
+        let alert:UIAlertView = UIAlertView(title: "Exit confirmation", message: "Are you sure?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "yes")
+        alert.show()
     }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if (buttonIndex == 1) {
+            let menuScene:MenuScene = MenuScene()
+            let transition:CCTransition = CCTransition(crossFadeWithDuration: 1.0)
+            CCDirector.sharedDirector().replaceScene(menuScene, withTransition: transition)
+        }
+    }
+    
+    //override func clickedB
     
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         NSLog("Touch swallowed by the pause dialog")

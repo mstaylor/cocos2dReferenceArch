@@ -147,6 +147,11 @@ class GameScene : CCScene {
         //self.createTheSun()
     }
     
+    override func onExit() {
+        super.onExit()
+        AudioManager.sharedAudioManager.stopMusic()
+    }
+    
     private func setupAimingIndicator() {
         let aimingIndicator:CCSprite = CCSprite.spriteWithImageNamed("power_meter.png") as! CCSprite;
         //1
@@ -202,6 +207,7 @@ class GameScene : CCScene {
     override func update(delta: CCTime) {
         
         if (self.gameState != GameState.GameStatePlaying) {
+            _gameStats?.timeSpent! += Float(delta)
             return;
         }
 
@@ -341,7 +347,7 @@ class GameScene : CCScene {
         let maxTime:UInt32 = 20;
         let minTime:UInt32 = 10;
         let random:UInt32 = arc4random();
-        let birdTime = minTime + (arc4random() % (maxTime - minTime));
+        let birdTime = minTime + (random % (maxTime - minTime));
         let screenLeft:CGPoint = ccp(0, CGFloat(birdY));
         
         let moveToLeftEdge:CCActionMoveTo! = CCActionMoveTo.actionWithDuration(CCTime(birdTime), position: screenLeft) as! CCActionMoveTo;

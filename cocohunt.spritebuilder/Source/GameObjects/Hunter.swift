@@ -93,7 +93,7 @@ class Hunter : CCSprite {
         arrow.position = torsoCenterGlobal;
         arrow.rotation = _torso.rotation;
         //Adding arrow to the self.parent
-        self.parent.addChild(arrow);
+        self.parent!.addChild(arrow);
         
         //Finding the direction of the arrow
         let viewSize:CGSize = CCDirector.sharedDirector().viewSize();
