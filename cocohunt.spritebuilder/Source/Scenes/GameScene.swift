@@ -66,7 +66,7 @@ class GameScene : CCScene {
         super.init();
         gameState = GameState.GameStateUnitialized;
         _useGyroToAim = false;
-        _birdsToSpawn = 10;
+        _birdsToSpawn = 1;
         _birdsToLose = 1;
         
         _timeUntilNextBird = -1;
@@ -297,6 +297,8 @@ class GameScene : CCScene {
         AudioManager.sharedAudioManager.playSoundEffect("lose.wav")
         self.gameState = GameState.GameStateLost;
         self.displayWinLoseLabelWithText("You Lose!", fontFileName: "lost.fnt");
+        let wlDialog:WinLoseDialog = WinLoseDialog(stats: _gameStats!)
+        self.addChild(wlDialog)
         //NSLog("YOU LOST!");
     }
     
@@ -304,6 +306,9 @@ class GameScene : CCScene {
         AudioManager.sharedAudioManager.playSoundEffect("win.wav")
         self.gameState = GameState.GameStateWon;
         self.displayWinLoseLabelWithText("You Win!", fontFileName: "win.fnt");
+        
+        let wlDialog:WinLoseDialog = WinLoseDialog(stats: _gameStats!)
+        self.addChild(wlDialog)
         //NSLog("YOU WON!");
     }
     
@@ -312,7 +317,7 @@ class GameScene : CCScene {
         
         let viewSize:CGSize = CCDirector.sharedDirector().viewSize();
         let label:CCLabelBMFont = CCLabelBMFont.labelWithString(text, fntFile: fontFileName) as! CCLabelBMFont;
-        label.position = ccp(viewSize.width * 0.5, viewSize.height * 0.75);
+        label.position = ccp(viewSize.width * 0.5, viewSize.height * 0.85);
         self.addChild(label, z: NodeOrder.Z_LABELS.rawValue);
         
         //setting initial scale to almost invisible (the label will pop out)

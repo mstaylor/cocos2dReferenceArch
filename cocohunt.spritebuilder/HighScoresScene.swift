@@ -8,11 +8,53 @@
 
 import Foundation
 
-class HighScoresScene : CCScene {
+class HighScoresScene : CCScene, CCTableViewDataSource {
+    
+    let kHighscoreRowHeight = CGFloat(32)
+    let kHighscoreFontName = "Helvetica"
+    let kHighscoreFontSize = 12
+    
     override init() {
         super.init();
         addBackground()
         addBackButton()
+        addHighscoresTable()
+    }
+    
+    func addHighscoresTable() {
+        //1
+        let highscoreTable:CCTableView = CCTableView()
+        
+        //2
+        highscoreTable.rowHeight = kHighscoreRowHeight
+        
+        //3
+        highscoreTable.anchorPoint = ccp(0.5, 1.0)
+        
+        //4
+        highscoreTable.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
+        highscoreTable.position = ccp(0.5, 0.65)
+        highscoreTable.contentSizeType = CCSizeTypeMake(CCSizeUnit.Normalized, CCSizeUnit.Normalized)
+        highscoreTable.contentSize = CGSizeMake(1, 0.4)
+        
+        //5
+        highscoreTable.userInteractionEnabled = false
+        
+        //6
+        self.addChild(highscoreTable)
+        
+        //7
+        highscoreTable.dataSource = self
+        
+        
+    }
+    
+    func tableView(tableView: CCTableView!, nodeForRowAtIndex index: UInt) -> CCTableViewCell! {
+       return nil
+    }
+    
+    func tableViewNumberOfRows(tableView: CCTableView!) -> UInt {
+       return 5
     }
     
     func addBackground() {
@@ -38,4 +80,7 @@ class HighScoresScene : CCScene {
         CCDirector.sharedDirector().replaceScene(scene, withTransition: transition)
         
     }
+    
+    
+    
 }
