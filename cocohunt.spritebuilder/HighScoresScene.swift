@@ -50,11 +50,13 @@ class HighScoresScene : CCScene, CCTableViewDataSource {
     }
     
     func tableView(tableView: CCTableView!, nodeForRowAtIndex index: UInt) -> CCTableViewCell! {
-       return nil
+       //1
+       // let highscore =
+        return nil
     }
     
     func tableViewNumberOfRows(tableView: CCTableView!) -> UInt {
-       return 5
+       return UInt((HighscoreManager.sharedHighscoreManager._highScores?.count)!)
     }
     
     func addBackground() {

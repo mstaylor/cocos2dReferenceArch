@@ -96,6 +96,8 @@
 		9E4BE3481B90D93B00120B71 /* btn_start.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4BE33A1B90D93B00120B71 /* btn_start.png */; };
 		9E4BE3491B90D93B00120B71 /* menu_bg-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4BE33B1B90D93B00120B71 /* menu_bg-hd.png */; };
 		9E4BE34A1B90D93B00120B71 /* menu_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E4BE33C1B90D93B00120B71 /* menu_bg.png */; };
+		9E4F39781BB0CD8E00A5F62E /* HighscoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F39771BB0CD8E00A5F62E /* HighscoreManager.swift */; settings = {ASSET_TAGS = (); }; };
+		9E4F397C1BB3625700A5F62E /* HighScoreDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4F397B1BB3625700A5F62E /* HighScoreDialog.swift */; settings = {ASSET_TAGS = (); }; };
 		9E53D6AC1BA22416005C0ADB /* btn_close_pressed-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53D6901BA22416005C0ADB /* btn_close_pressed-hd.png */; };
 		9E53D6AD1BA22416005C0ADB /* btn_close_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53D6911BA22416005C0ADB /* btn_close_pressed.png */; };
 		9E53D6AE1BA22416005C0ADB /* btn_close-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E53D6921BA22416005C0ADB /* btn_close-hd.png */; };
@@ -394,6 +396,8 @@
 		9E4BE33A1B90D93B00120B71 /* btn_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_start.png; sourceTree = "<group>"; };
 		9E4BE33B1B90D93B00120B71 /* menu_bg-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu_bg-hd.png"; sourceTree = "<group>"; };
 		9E4BE33C1B90D93B00120B71 /* menu_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_bg.png; sourceTree = "<group>"; };
+		9E4F39771BB0CD8E00A5F62E /* HighscoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighscoreManager.swift; sourceTree = "<group>"; };
+		9E4F397B1BB3625700A5F62E /* HighScoreDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreDialog.swift; sourceTree = "<group>"; };
 		9E53D6901BA22416005C0ADB /* btn_close_pressed-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_pressed-hd.png"; sourceTree = "<group>"; };
 		9E53D6911BA22416005C0ADB /* btn_close_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_pressed.png; sourceTree = "<group>"; };
 		9E53D6921BA22416005C0ADB /* btn_close-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close-hd.png"; sourceTree = "<group>"; };
@@ -1027,6 +1031,7 @@
 			children = (
 				9EC65C741B017E7700A089A8 /* AudioManager.swift */,
 				9E69A6DF1AC4BF860013365D /* GameStats.swift */,
+				9E4F39771BB0CD8E00A5F62E /* HighscoreManager.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1063,6 +1068,7 @@
 				9E53D6C81BA22487005C0ADB /* PauseDialog.swift */,
 				9E53D6DC1BA772E7005C0ADB /* LoadingScene.swift */,
 				9E9F60991BAB6603000DA162 /* WinLoseDialog.swift */,
+				9E4F397B1BB3625700A5F62E /* HighScoreDialog.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -1677,11 +1683,13 @@
 			files = (
 				9E69A6E01AC4BF860013365D /* GameStats.swift in Sources */,
 				9E5C972B1B965F3B003D5F1C /* HighScoresScene.swift in Sources */,
+				9E4F397C1BB3625700A5F62E /* HighScoreDialog.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				9E69A6DD1AC216840013365D /* HUDLayer.swift in Sources */,
 				9E3582821AAE11A400E5C088 /* Bird.swift in Sources */,
 				9E86580D1AA7D511001F507D /* Hunter.swift in Sources */,
 				9E654A4A1ADF19600021EE24 /* IntroScene.swift in Sources */,
+				9E4F39781BB0CD8E00A5F62E /* HighscoreManager.swift in Sources */,
 				9E4519241B952A3A00ADC323 /* AboutScene.swift in Sources */,
 				9E53D6C91BA22487005C0ADB /* PauseDialog.swift in Sources */,
 				9EC65C751B017E7700A089A8 /* AudioManager.swift in Sources */,

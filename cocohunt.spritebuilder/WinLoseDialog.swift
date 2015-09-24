@@ -27,6 +27,16 @@ class WinLoseDialog : CCNode {
         _currenStats = stats
         self.setupModalDialog()
         self.createDialogLayout()
+        if (HighscoreManager.sharedHighscoreManager.isHighscore((_currenStats?.score)!)) {
+            let hsDialog:HighScoreDialog = HighScoreDialog(stats: _currenStats!)
+            hsDialog.onCloseBlock = {
+                Void in
+                 self.createDialogLayout()
+            }
+            self.addChild(hsDialog)
+        } else {
+            self.createDialogLayout()
+        }
     }
     
     func setupModalDialog() {

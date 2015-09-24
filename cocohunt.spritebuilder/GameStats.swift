@@ -14,6 +14,7 @@ class GameStats {
     var birdsLeft:Int? = nil
     var lives:Int? = nil
     var timeSpent:Float? = nil
+    var playerName:String? = ""
     
     init() {
         score = 0
