@@ -78,16 +78,16 @@ class WinLoseDialog : CCNode {
             
         }
         
-        let restartNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_restart.png") as! CCSpriteFrame
-        let restartHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_restart_pressed.png") as! CCSpriteFrame
+        let restartNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_restart.png")
+        let restartHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_restart_pressed.png")
         let btnRestart:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: restartNormalImage, highlightedSpriteFrame: restartHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnRestart.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnRestart.position = ccp(0.25, 0.2)
         btnRestart.setTarget(self, selector: "btnRestartTapped")
         bg.addChild(btnRestart)
         
-        let exitNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_exit.png") as! CCSpriteFrame
-        let exitHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_exit_pressed.png") as! CCSpriteFrame
+        let exitNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_exit.png")
+        let exitHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_exit_pressed.png")
         let btnExit:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: exitNormalImage, highlightedSpriteFrame: exitHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnExit.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnExit.position = ccp(0.75, 0.2)

@@ -51,8 +51,36 @@ class HighScoresScene : CCScene, CCTableViewDataSource {
     
     func tableView(tableView: CCTableView!, nodeForRowAtIndex index: UInt) -> CCTableViewCell! {
        //1
-       // let highscore =
-        return nil
+        let highscore:GameStats = HighscoreManager.sharedHighscoreManager._highScores![Int(index)]
+        let playerName:String = highscore.playerName!
+        let score = highscore.score
+        
+        //2
+        let cell:CCTableViewCell = CCTableViewCell()
+        cell.contentSizeType = CCSizeTypeMake(CCSizeUnit.Normalized, CCSizeUnit.Points)
+        cell.contentSize = CGSizeMake(1, kHighscoreRowHeight)
+        
+        //3
+        let bg:CCSprite = CCSprite.spriteWithImageNamed("table_cell_bg.png") as! CCSprite
+        bg.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
+        bg.position = ccp(0.5, 0.5)
+        cell.addChild(bg)
+        
+        //4
+        let lblPlayerName:CCLabelTTF = CCLabelTTF.labelWithString(playerName, fontName: kHighscoreFontName, fontSize: CGFloat(kHighscoreFontSize)) as! CCLabelTTF
+        lblPlayerName.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
+        lblPlayerName.position = ccp(0.05, 0.5)
+        lblPlayerName.anchorPoint = ccp(0, 0.5)
+        bg.addChild(lblPlayerName)
+        
+        //5
+        let scoreString:String = String.init(format: "%d pts.", score!)
+        let lblScore:CCLabelTTF = CCLabelTTF.labelWithString(scoreString, fontName: kHighscoreFontName, fontSize: CGFloat(kHighscoreFontSize)) as! CCLabelTTF
+        lblScore.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
+        lblScore.position = ccp(0.95, 0.5)
+        lblScore.anchorPoint = ccp(1, 0.5)
+        bg.addChild(lblScore)
+        return cell
     }
     
     func tableViewNumberOfRows(tableView: CCTableView!) -> UInt {
@@ -67,8 +95,8 @@ class HighScoresScene : CCScene, CCTableViewDataSource {
     }
     
     func addBackButton() {
-        let backNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_back.png") as! CCSpriteFrame
-        let backHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_back_pressed.png") as! CCSpriteFrame
+        let backNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_back.png")
+        let backHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_back_pressed.png")
         let btnBack:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: backNormalImage, highlightedSpriteFrame: backHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnBack.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnBack.position = ccp(0.1, 0.9)

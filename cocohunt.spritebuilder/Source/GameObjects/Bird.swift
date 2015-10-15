@@ -33,6 +33,8 @@ class Bird : CCSprite {
         case BirdStateDead
     }
     
+  
+    
     convenience init(birdType: BirdType) {
         
         var birdImageName : String?
@@ -99,23 +101,23 @@ class Bird : CCSprite {
             case BirdType.BirdTypeSmall:
                 animFrameNameFormat = "bird_small_%d.png"
             
-            default:
-                NSLog("Unknown bird type, using small bird!")
-                animFrameNameFormat = "bird_small_%d.png"
+            //default:
+            //    NSLog("Unknown bird type, using small bird!")
+            //    animFrameNameFormat = "bird_small_%d.png"
         }
         
         let animFrames: NSMutableArray = NSMutableArray(capacity: 7);
         for i in 0...6 {
             let currentFrameName: String = String(format: animFrameNameFormat, i);
             
-            let animationFrame: CCSpriteFrame! = CCSpriteFrame.frameWithImageNamed(currentFrameName) as! CCSpriteFrame;
+            let animationFrame: CCSpriteFrame! = CCSpriteFrame(imageNamed: currentFrameName)
             
             animFrames.addObject(animationFrame);
             
             
         }
         
-        let flyAnimation:CCAnimation! = CCAnimation.animationWithSpriteFrames(animFrames as [AnyObject], delay: 0.1) as! CCAnimation;
+        let flyAnimation:CCAnimation! = CCAnimation(spriteFrames: animFrames as [AnyObject], delay: 0.1)
         
         let flyAnimateAction:CCActionAnimate! = CCActionAnimate.actionWithAnimation(flyAnimation) as! CCActionAnimate;
         

@@ -33,8 +33,8 @@ class PauseDialog : CCNode, UIAlertViewDelegate {
         self.addChild(bg)
         
         //Close button (X)
-        let closeNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_close.png") as! CCSpriteFrame
-        let closeHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_close_pressed.png") as! CCSpriteFrame
+        let closeNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_close.png")
+        let closeHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_close_pressed.png")
         let btnClose:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: closeNormalImage, highlightedSpriteFrame: closeHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnClose.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnClose.position = ccp(1, 1)
@@ -42,16 +42,16 @@ class PauseDialog : CCNode, UIAlertViewDelegate {
         bg.addChild(btnClose)
         
         //Restart button
-        let restartNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_restart.png") as! CCSpriteFrame
-        let restartHighLightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_restart_pressed.png") as! CCSpriteFrame
+        let restartNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_restart.png")
+        let restartHighLightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_restart_pressed.png")
         let btnRestart:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: restartNormalImage, highlightedSpriteFrame: restartHighLightedImage, disabledSpriteFrame: nil) as! CCButton
         btnRestart.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnRestart.position = ccp(0.25, 0.2)
         btnRestart.setTarget(self, selector: "btnRestartTapped")
         bg.addChild(btnRestart)
         
-        let exitNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_exit.png") as! CCSpriteFrame
-        let exitHighLightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_exit_pressed.png") as! CCSpriteFrame
+        let exitNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_exit.png")
+        let exitHighLightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_exit_pressed.png") 
         let btnExit:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: exitNormalImage, highlightedSpriteFrame: exitHighLightedImage, disabledSpriteFrame: nil) as! CCButton
         
         btnExit.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)

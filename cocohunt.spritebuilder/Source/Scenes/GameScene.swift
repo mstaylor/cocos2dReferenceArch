@@ -171,6 +171,7 @@ class GameScene : CCScene {
     
     private func createBatchNode() {
         CCSpriteFrameCache.sharedSpriteFrameCache().addSpriteFramesWithFile("Cocohunt.plist")
+        //CCSpriteFrameCache.sharedSpriteFrameCache().addSpriteFramesWithFile("physics_level.plist")
         _batchNode = CCSprite();
         self.addChild(_batchNode, z: NodeOrder.Z_BATCH_NODE.rawValue);
         //_batchNode = CCSprite(imageNamed: "Cocohunt.png")
@@ -478,8 +479,8 @@ class GameScene : CCScene {
     }
     
     private func addPauseButton() {
-        let pauseNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_pause.png") as! CCSpriteFrame
-        let pauseHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_pause_pressed.png") as! CCSpriteFrame
+        let pauseNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_pause.png")
+        let pauseHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_pause_pressed.png")
         let btnPause:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: pauseNormalImage, highlightedSpriteFrame: pauseHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnPause.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnPause.position = ccp(0.95, 0.5)

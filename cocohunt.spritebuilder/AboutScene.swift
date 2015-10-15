@@ -49,8 +49,8 @@ class AboutScene : CCScene {
     }
     
     func addVisitWebSiteButton() {
-        let normal:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_9slice.png") as! CCSpriteFrame
-        let pressed:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_9slice_pressed.png") as! CCSpriteFrame
+        let normal:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_9slice.png")
+        let pressed:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_9slice_pressed.png")
         let btnVisitWebsite:CCButton = CCButton.buttonWithTitle("Visit Web Site", spriteFrame: normal, highlightedSpriteFrame: pressed, disabledSpriteFrame: nil) as! CCButton
         btnVisitWebsite.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnVisitWebsite.position = ccp(0.5, 0.1)
@@ -63,8 +63,8 @@ class AboutScene : CCScene {
     }
     
     func addBackButton() {
-        let backNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_back.png") as! CCSpriteFrame
-        let backHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_back_pressed.png") as! CCSpriteFrame
+        let backNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_back.png")
+        let backHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_back_pressed.png") 
         let btnBack:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: backNormalImage, highlightedSpriteFrame: backHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnBack.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnBack.position = ccp(0.1, 0.9)

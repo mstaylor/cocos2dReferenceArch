@@ -130,13 +130,13 @@ class Hunter : CCSprite {
         
         for var i = 0; i < 6; i++ {
             let frameName:String = String.localizedStringWithFormat(frameNameFormat, i);
-            let frame:CCSpriteFrame! = CCSpriteFrame.frameWithImageNamed(frameName) as! CCSpriteFrame;
+            let frame:CCSpriteFrame! = CCSpriteFrame(imageNamed: frameName)
             frames.addObject(frame);
         }
         
         //3
         
-        let reloadAnimation:CCAnimation! = CCAnimation.animationWithSpriteFrames(frames as [AnyObject], delay: 0.05) as! CCAnimation;
+        let reloadAnimation:CCAnimation! = CCAnimation(spriteFrames: frames as [AnyObject], delay: 0.05)
         reloadAnimation.restoreOriginalFrame = true;
         let reloadAnimAction:CCActionAnimate! = CCActionAnimate.actionWithAnimation(reloadAnimation) as! CCActionAnimate;
         

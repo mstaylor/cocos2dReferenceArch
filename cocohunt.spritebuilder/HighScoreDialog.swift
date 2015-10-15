@@ -28,7 +28,7 @@ class HighScoreDialog: CCNode {
         background.position = ccp(viewSize.width * 0.5, viewSize.height * 0.5)
         self.addChild(background)
         
-        let textFieldFrame:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("highscore_dialog_textfield.png") as! CCSpriteFrame
+        let textFieldFrame:CCSpriteFrame = CCSpriteFrame(imageNamed: "highscore_dialog_textfield.png")
         _playerNameInput = CCTextField.init(spriteFrame: textFieldFrame)
         _playerNameInput?.string = "Player1"
         
@@ -47,8 +47,9 @@ class HighScoreDialog: CCNode {
         _validateResult?.position = ccp(0.5, 0.6)
         background.addChild(_validateResult)
         
-        let okNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_ok.png") as! CCSpriteFrame
-        let okHighlightedImage = CCSpriteFrame.frameWithImageNamed("btn_ok_pressed.png") as! CCSpriteFrame
+        let okNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_ok-hd.png")
+        
+        let okHighlightedImage = CCSpriteFrame(imageNamed: "btn_ok_pressed-hd.png") 
         
         let btnOk:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: okNormalImage, highlightedSpriteFrame: okHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnOk.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)

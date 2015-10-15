@@ -32,11 +32,11 @@ class IntroScene :  CCScene {
         let lastFrameNumber = 34;
         for var i = 0; i <= lastFrameNumber; i++ {
             let frameName = String.localizedStringWithFormat("Exploding_Coconut_%d.png", i);
-            let frame:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed(frameName) as! CCSpriteFrame;
+            let frame:CCSpriteFrame = CCSpriteFrame(imageNamed: frameName)
             frames.addObject(frame);
         }
-        
-        let explosion:CCAnimation = CCAnimation.animationWithSpriteFrames(frames as [AnyObject], delay: 0.15) as! CCAnimation;
+        let explosion:CCAnimation = CCAnimation(spriteFrames: frames as [AnyObject], delay: 0.15)
+        //let explosion:CCAnimation = CCAnimation(spriteFrames: frames as [AnyObject], delay: 0.15)
         
         let animateExplosion: CCActionAnimate = CCActionAnimate.actionWithAnimation(explosion) as! CCActionAnimate;
         

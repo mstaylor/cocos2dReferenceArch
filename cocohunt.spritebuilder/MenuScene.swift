@@ -32,10 +32,10 @@ class MenuScene : CCScene {
     
     func addMenuButtons() {
         //1
-        let startNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_start.png") as! CCSpriteFrame
+        let startNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_start.png")
         
         //2
-        let startHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_start_pressed.png") as! CCSpriteFrame
+        let startHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_start_pressed.png")
         
         //3
         let btnStart:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: startNormalImage, highlightedSpriteFrame: startHighlightedImage, disabledSpriteFrame: nil) as! CCButton
@@ -43,14 +43,14 @@ class MenuScene : CCScene {
         //4
         btnStart.setTarget(self, selector: "btnStartTapped")
         
-        let aboutNormalImage = CCSpriteFrame.frameWithImageNamed("btn_about.png") as! CCSpriteFrame
-        let aboutHighlightedImage = CCSpriteFrame.frameWithImageNamed("btn_about_pressed.png") as! CCSpriteFrame
+        let aboutNormalImage = CCSpriteFrame(imageNamed: "btn_about.png")
+        let aboutHighlightedImage = CCSpriteFrame(imageNamed: "btn_about_pressed.png")
         let btnAbout:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: aboutNormalImage, highlightedSpriteFrame: aboutHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         
         btnAbout.setTarget(self, selector: "btnAboutTapped")
         
-        let highscoresNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_highscores.png") as! CCSpriteFrame
-        let highscoresHighlightedImage = CCSpriteFrame.frameWithImageNamed("btn_highscores_pressed.png") as! CCSpriteFrame
+        let highscoresNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_highscores.png")
+        let highscoresHighlightedImage = CCSpriteFrame(imageNamed: "btn_highscores_pressed.png")
         
         let btnHighscores:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: highscoresNormalImage, highlightedSpriteFrame: highscoresHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         
@@ -80,8 +80,8 @@ class MenuScene : CCScene {
     
     func addAudioButtons() {
         //1
-        let soundOnImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_sound.png") as! CCSpriteFrame
-        let soundOffImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_sound_pressed.png") as! CCSpriteFrame
+        let soundOnImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_sound.png")
+        let soundOffImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_sound_pressed.png")
         _btnSoundToggle = CCButton.buttonWithTitle(nil, spriteFrame: soundOnImage, highlightedSpriteFrame: soundOffImage, disabledSpriteFrame: nil) as?CCButton
         
         //2
@@ -99,8 +99,8 @@ class MenuScene : CCScene {
         self.addChild(_btnSoundToggle!)
         
         //6
-        let musicOnImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_music.png") as! CCSpriteFrame
-        let musicOffImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_music_pressed.png") as! CCSpriteFrame
+        let musicOnImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_music.png")
+        let musicOffImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_music_pressed.png") 
         _btnMusicToggle = CCButton.buttonWithTitle(nil, spriteFrame: musicOnImage, highlightedSpriteFrame: musicOffImage, disabledSpriteFrame: nil) as? CCButton
         _btnMusicToggle?.togglesSelectedState = true
         _btnMusicToggle?.selected = AudioManager.sharedAudioManager._isMusicEnabled

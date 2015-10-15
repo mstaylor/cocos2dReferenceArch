@@ -28,8 +28,8 @@ class LevelSelectScene : CCScene {
     
     
     func addBackButton() {
-        let backNormalImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_back.png") as! CCSpriteFrame
-        let backHighlightedImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("btn_back_pressed.png") as! CCSpriteFrame
+        let backNormalImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_back.png")
+        let backHighlightedImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "btn_back_pressed.png")
         let btnBack:CCButton = CCButton.buttonWithTitle(nil, spriteFrame: backNormalImage, highlightedSpriteFrame: backHighlightedImage, disabledSpriteFrame: nil) as! CCButton
         btnBack.positionType = CCPositionTypeMake(CCPositionUnit.Normalized, CCPositionUnit.Normalized, CCPositionReferenceCorner.BottomLeft)
         btnBack.position = ccp(0.1, 0.9)
@@ -49,18 +49,18 @@ class LevelSelectScene : CCScene {
         let levels = 10
         
         //2
-        let scrollViewContents:CCNode = CCNode.node() as! CCNode
+        let scrollViewContents:CCNode = CCNode()
         scrollViewContents.contentSizeType = CCSizeTypeMake(CCSizeUnit.Normalized, CCSizeUnit.Normalized)
         scrollViewContents.contentSize = CGSizeMake(CGFloat(levels), CGFloat(1))
         for var i = 0; i < levels; i++ {
             //3
             var level:CCButton
             if (i % 2 == 0) {
-              let levelImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("hunting_level.png") as! CCSpriteFrame
+              let levelImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "hunting_level.png")
               level = CCButton.buttonWithTitle(nil, spriteFrame: levelImage) as! CCButton
               level.name = kLevelHunting
             } else {
-                let levelImage:CCSpriteFrame = CCSpriteFrame.frameWithImageNamed("dodging_level.png") as! CCSpriteFrame
+                let levelImage:CCSpriteFrame = CCSpriteFrame(imageNamed: "dodging_level.png") 
                 level = CCButton.buttonWithTitle(nil, spriteFrame: levelImage) as! CCButton
                 level.name = kLevelDodging
             }
@@ -93,6 +93,10 @@ class LevelSelectScene : CCScene {
         let levelName:String = (sender as! CCButton).name
         if (levelName == kLevelHunting) {
             let scene:GameScene = GameScene()
+            let transition:CCTransition = CCTransition(crossFadeWithDuration: 1.0)
+            CCDirector.sharedDirector().replaceScene(scene, withTransition: transition)
+        } else if (levelName == kLevelDodging) {
+            let scene:PhysicsScene = PhysicsScene()
             let transition:CCTransition = CCTransition(crossFadeWithDuration: 1.0)
             CCDirector.sharedDirector().replaceScene(scene, withTransition: transition)
         } else {
