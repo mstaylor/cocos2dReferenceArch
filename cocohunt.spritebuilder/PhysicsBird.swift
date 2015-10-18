@@ -62,7 +62,7 @@ class PhysicsBird : Bird {
     
     override func fixedUpdate(dt: CCTime) {
         //1: Calculating vertical force to hold the bird in the air
-        let forceToHoldBird = -1 * (self._stoneToDrop?.physicsBody.mass)! * self.physicsNode().gravity.y
+        let forceToHoldBird = -1 * self.physicsBody.mass * self.physicsNode().gravity.y
         
         //2: Checking the bird state
         if (_state == PhysicsBirdState.PhysicsBirdStateFlyingIn) {
